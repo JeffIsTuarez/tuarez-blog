@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
 def test
+@posts= Post.all
+end
+
+def test
 end
 end
