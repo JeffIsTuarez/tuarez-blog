@@ -40,3 +40,10 @@ gem 'spring',        group: :development
 gem 'foundation-rails'
 gem 'annotate'
 gem 'bcrypt'
+group:test do
+  gem 'rspec-rails'
+  gem 'rspec-mocks'
+  gem 'rspec-its'
+  gem 'capybara'
+  gem 'factory_girl_rails'
+end

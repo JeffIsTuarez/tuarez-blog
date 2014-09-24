@@ -12,7 +12,7 @@
 
 class User < ActiveRecord::Base
 def name
-  "#{ self.fname } #{ self.lname} "
+  "#{ self.fname } #{ self.lname}"
 end
 def as_json(options)
  super(except: [:password_digest, :fname, :lname]).merge({ name:self.name})

@@ -9,6 +9,7 @@ class PostsController < ApplicationController
   end
 
   def new
+     @post=Post.new
   end
 
   def create
@@ -22,4 +23,21 @@ class PostsController < ApplicationController
   def test
     
   end
+
+def edit
+  Post.find(params[:id])
+end
+def update
+    @post = Post.find(params[:id])
+    respond_to do |format|
+      if @post.update(post_params)
+        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @post.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
 end
