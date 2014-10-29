@@ -10,11 +10,12 @@ end
 def new
 end
 def create
-  @user =User.create(user_params)
+  @user=User.create(user_params)
+  p @user.errors.full_messages
   redirect_to @user
 end
 def user_params
-  params.require(:user).permit(:fname, :lname, :email)
+  params.require(:user).permit(:fname, :lname, :email, :password)
 end
 def show
   @user= User.find(params[:id])
